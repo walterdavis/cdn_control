@@ -1,0 +1,11 @@
+<%- if f.object.file_name? -%>
+<p class="form-inline">
+  <i class="icon-file" style="opacity: 0.4"></i>
+  <%= f.object.file_name %> &nbsp;
+  <%= f.label :make_link, f.check_box(:make_link) + ' Make link', :class => 'checkbox' %>
+</p>
+<%- else -%>
+<%= f.file_field :file %>
+<span class="hint">(upload a Zip to create multiple files in one step)</span>
+<%= f.label :make_link, f.check_box(:make_link) + ' Make link', :class => 'checkbox' %>
+<%- end -%>

@@ -1,0 +1,10 @@
+<%= content_for :title, @user.name %>
+<h1><%= @user.name %></h1>
+  
+<p>Email: <%= @user.email if @user.email %></p>
+<h2>Libraries:</h2>
+<ul>
+  <%- @user.libraries.order(:name).each do |library| -%>
+  <li><%= link_to library.name, library %></li>
+  <%- end -%>
+</ul>

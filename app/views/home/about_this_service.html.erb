@@ -1,0 +1,54 @@
+<%= content_for :title, 'About this Service' %>
+<div class="row">
+  <div class="span7">
+    <h1>About this Service</h1>
+    <p class="lead">This is the FreewayPro CDN, a service for Freeway Action authors to make their software simpler and faster.</p>
+    <h4>So what is this thing?</h4>
+
+    <p>This site uploads any file a member decides to share with the world into the Amazon CloudFront CDN (content delivery network). Files hosted in this manner are available to people everywhere in the world in a very efficient fashion. Rather than waiting for a request to bounce its way from Taipei to London and back with the goods, that request gets routed to the geographically-closest server in a worldwide net of edge cache hosts. Even at the speed of light, physical distance does matter.</p>
+
+    <h4>What should I host here?</h4>
+
+    <p>If you write Freeway Actions that add JavaScript to the page, it’s a good idea to externalize your scripts to make the page head easier to look at and to make it easier for search engines to read. Take that a step further, and if the script never changes (likely, if it’s library code) then there’s no reason for your Action to have to carry it around, write it out, create a file, etc. It’s much simpler to create a single-line link to that file from a public server.</p>
+
+    <p>Your Actions may also provide CSS or refer to images that don’t ever change. Those are also great candidates for this service.</p>
+
+    <h4>How to use it in your Actions</h4>
+
+    <blockquote>
+      <p class="lead">“&#8230;you’ll need to have this fish in your ear&#8230;” </p>
+    </blockquote>
+
+    <p>Seriously, though, you need the following two functions somewhere in your action-javascript:</p>
+
+    <script src="https://gist.github.com/4522045.js"></script>
+
+    <p>And then you call it thus, with the link to your CDN-hosted script as the second argument:</p>
+
+    <script src="https://gist.github.com/4524952.js"></script>
+
+    <p>No matter where you do that in the publishing cycle, there will only be one such link in the page head when all (cooperating) Actions are done with their work. If you are concerned with older “Scripty” Actions being in the same page, then it is advisable to call this function from within the <code>fwAfterEndHTML()</code> callback, though.</p>
+
+    <p>Cooperating in this scheme has taken a turn for the better, too. Unlike the previous iteration of the “Scripty” club, there is no need for each Action to follow the same precepts in order to guarantee that all the needed Scriptaculous libraries are loaded, or for all Actions to announce themselves to one another. As long as each Action on the page inserts its script links using <code>fwAdd()</code> instead of <code>fwAddRaw()</code>, the <code>pageHasLinkToScript()</code> function can find them and modify them or avoid duplicating them as needed.</p>
+  </div>
+  <div id="terms_of_use" class="span4 well pull-right">
+    <h2>Terms of Use</h2>
+    <p>Welcome to the FreewayPro CDN (also referred to below as the Service).</p>
+    <p>By using this Service, you agree to the following terms. If you don&rsquo;t agree, there are other places where you can host your content.</p>
+    <p>This Service is offered free of charge to the <a href="http://softpress.com">Freeway Pro</a> community, for the benefit of Action authors and other like-minded Web craftspeople, by <a href="http://walterdavisstudio.com">Walter Davis Studio</a>.</p>
+    <p>Any content you post here will be replicated across the global Internet in a relatively short period of time, and it will be difficult but not impossible to remove it from public view. Please consider that before posting those launch codes...</p>
+    <ol>
+      <li>All content posted on this Service must comply with U.S. copyright law. If it isn&rsquo;t your work or property, you must have permission to post it here for all the world to see.</li>
+      <li>We claim no intellectual property rights over the material you provide to the Service. Any materials uploaded remain yours.</li>
+      <li>We do not pre-screen content, but Walter Davis Studio and its designees have the right (but not the obligation) in their sole discretion to refuse or remove any content that is available via the Service.</li>
+      <li>This service depends on the Amazon global network, which we do not own or control. Any disruption in the Amazon US/East network center could make it impossible to manage your content within this service. Any content already propagated to the globally-distributed CloudFront service should remain available, although that is by no means guaranteed either.</li>
+    </ol>
+    <p class="lead">This Service is provided without charge, and without any guarantee or warrantee that it will always remain on-line or that it will be useful for any purpose. Under no circumstances will Walter Davis Studio or its designees be liable for any loss or damages, financial or otherwise, under any theory or principle of legal responsibility of any sort. If you rely on this Service, that is your own decision.</p>
+    <address>
+      <strong>Walter Davis Studio</strong><br />
+      7530 Mountain Avenue<br />
+      Melrose Park, PA 19027
+    </address>
+    <p>Updated: <time datetime="2013-01-13">January 13, 2013</time></p>
+  </div>
+</div>

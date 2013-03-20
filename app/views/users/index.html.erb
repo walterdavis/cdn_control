@@ -1,0 +1,20 @@
+<%= content_for :title, 'Members' %>
+<h1>Members</h1>
+<table class="table table-striped users">
+  <tr>
+    <th>Name</th>
+    <th>Member since</th>
+    <th>Roles</th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= link_to user.name, user %></td>
+      <td><%= user.created_at.to_date %></td>
+      <td>
+        <%= form_tag( set_roles_user_path(user), {:class => 'form-inline', :style => 'margin-bottom: 0', :method => :put, :onclick => "this.submit()"}) do |f| %>
+          <%= role_checkboxes(user) %>
+        <%- end -%>
+      </td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,7 @@
+<hr class="flat"/>
+<p class="form-inline">
+<%= f.label :version %>
+<%= f.text_field :version, :class => 'input-small' %>
+</p>
+<p><%= f.link_to_add '<i class="icon-file"></i>'.html_safe + " Add a file to this version", :uris, :class => "btn btn-small" %></p>
+<%= f.fields_for :uris %>

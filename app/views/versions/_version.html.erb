@@ -1,0 +1,22 @@
+<h3><%= version.version %></h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>URI</th>
+      <th>Secure URI (HTTPS)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%- version.uris.each do |uri| -%>
+    <tr>
+      <td><%= uri.file_name %></td>
+      <td><%= link(uri) %></td>
+      <td><%= link(uri, 'secure') %></td>
+    </tr>
+    <%- end -%>
+  </tbody>
+</table>
+<dt></dt>
+<dd></dd>
+</dl>

@@ -1,0 +1,5 @@
+<%= content_for :title, @library.name %>
+<h1><%= @library.name %></h1>
+<%= simple_format @library.description %>
+<%= render @library.versions.order('id DESC') %>
+<p><%= link_to 'All Libraries', libraries_path, :class => 'btn' %> <%= link_to 'Edit', edit_library_path(@library), :class => 'btn btn-inverse' %></p>

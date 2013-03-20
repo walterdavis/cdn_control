@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  version: MyString
+  library: 
+  zip_uid: MyString
+  zip_name: MyString
+
+two:
+  version: MyString
+  library: 
+  zip_uid: MyString
+  zip_name: MyString

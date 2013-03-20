@@ -1,0 +1,89 @@
+h1. Cdn Control
+
+Control your own CDN on the Amazon CloudFront service. (Some assembly required!)
+
+This application was generated with the "rails_apps_composer":https://github.com/RailsApps/rails_apps_composer gem provided by the "RailsApps Project":http://railsapps.github.com/.
+
+h2. Diagnostics
+
+This application was built with recipes that are known to work together.
+
+This application was built with preferences that are NOT known to work together.
+
+If the application doesn't work as expected, please "report an issue":https://github.com/RailsApps/rails_apps_composer/issues and include these diagnostics:
+
+We'd also like to know if you've found combinations of recipes or preferences that do work together.
+
+Recipes:
+["controllers", "core", "email", "extras", "frontend", "gems", "git", "init", "models", "prelaunch", "railsapps", "readme", "routes", "saas", "setup", "testing", "views"]
+
+Preferences:
+{:git=>true, :railsapps=>"none", :dev_webserver=>"thin", :prod_webserver=>"thin", :database=>"mysql", :templates=>"erb", :unit_test=>"test_unit", :integration=>"none", :fixtures=>"none", :frontend=>"bootstrap", :bootstrap=>"sass", :email=>"smtp", :authentication=>"devise", :devise_modules=>"invitable", :authorization=>"cancan", :form_builder=>"none", :starter_app=>"users_app", :quiet_assets=>true, :local_env_file=>true, :better_errors=>true, :ban_spiders=>true, :github=>true}
+
+h2. Ruby on Rails
+
+This application requires:
+
+* Ruby version 1.9.3
+* Rails version 3.2.11
+
+Learn more about "Installing Rails":http://railsapps.github.com/installing-rails.html.
+
+h2. Database
+
+This application uses MySQL with ActiveRecord.
+
+h2. Development
+
+* Template Engine: ERB
+* Testing Framework: Test::Unit
+* Front-end Framework: Twitter Bootstrap (Sass)
+* Form Builder: None
+* Authentication: Devise
+* Authorization: CanCan
+
+h2. Email
+
+The application is configured to send email using a SMTP account.
+
+h2. Getting Started
+
+Configure the application with your S3 credentials, or comment out the S3 part of /config/initializers/dragonfly.rb to get started. The application is hard-wired to look for an S3 bucket named ajax-cdn, so you'll need that as well.
+
+h2. Documentation and Support
+
+This is the only documentation.
+
+h4. Issues
+
+Not all of the files are here, owing to a vigorous .gitignore. Please let me know through the issues what you fall apart on. Also, you must comment out the automatic functions line in /config/initializers/rolify.rb in order for intial migrations to work at all.
+
+h2. Similar Projects
+
+Please let me know if you find any!
+
+h2. Contributing
+
+If you make improvements to this application, please share with others.
+
+* Fork the project on GitHub.
+* Make your feature addition or bug fix.
+* Commit with Git.
+* Send the author a pull request.
+
+If you add functionality to this application, create an alternative implementation, or build an application that is similar, please contact me and I'll add a note to the README so that others can find your work.
+
+h2. Credits
+
+©2013 Walter Davis Studio
+
+h2. License
+
+The MIT License (MIT)
+Copyright (c) 2013 Walter Davis Studio.
+ 
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ 
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

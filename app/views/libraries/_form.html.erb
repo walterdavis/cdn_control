@@ -1,0 +1,32 @@
+<%= nested_form_for @library, :html => {:multipart => true} do |f| %>
+<% if @library.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@library.errors.count, "error") %> prohibited this library from being saved:</h2>
+
+    <ul>
+    <% @library.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<p>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<span class="hint">(lower-case letters, numbers, hyphens, or underscores only)</span>
+</p>
+<p>
+  <%= f.label :description %>
+  <%= f.text_area :description, :rows => 6 %>
+</p>
+<h2>Versions <%= f.link_to_add '<i class="icon-folder-open"></i>'.html_safe + " Add a version", :versions, :class => "btn btn-small" %></h2>
+<%= f.fields_for :versions %>
+<hr class="flat"/>
+<p>
+<%= f.submit({:class => 'btn btn-primary'}) %>
+<%= link_to 'Cancel', libraries_path, :class => 'btn' %>
+&nbsp;
+<%= link_to( 'Delete', @library, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-danger' ) if @library.persisted? %>
+</p>
+<%- end -%>

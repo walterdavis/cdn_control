@@ -1,0 +1,36 @@
+<%= content_for :title, 'Libraries' %>
+<div class="hero-unit">
+  <h1 style="padding-bottom: 14px"><nobr>It’s Open. <wbr/><small>The new FreewayPro CDN.</small></nobr></h1>
+  <p>
+    This collection of library scripts is hosted at the Amazon CloudFront service for worldwide availability.<br/>
+    Sign up for a free account to add your own scripts here, and reference them in your Freeway Actions.
+  </p>
+  <p><%= link_to( 'Sign Up', new_user_registration_path, :class => 'btn btn-large btn-success' ) %></p>
+</div>
+<h2>All Libraries</h2>
+<form style="overflow: hidden; margin: 0 0 8px;" action="" id="live_search">
+  <input type="search" class="search-query pull-left" id="q" placeholder="Live search..." />
+  <button id="clear" class="close pull-left" style="margin-left: 8px">&times;</button>
+  <%= link_to( 'Create a Library', new_library_path, :class => 'btn pull-right' ) %>
+</form>
+<p class="nav pull-right"></p>
+<table class = "table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Library</th>
+      <th>Description</th>
+      <th>Author</th>
+      <th>Latest version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @libraries.each do |library| %>
+    <tr class="lib" data-keyword="<%= library.keywords %>">
+      <td><%= link_to library.name, library %></td>
+      <td><%= library.description.squish.truncate(60) %></td>
+      <td><%= library.user.name %></td>
+      <td><%= library.versions.first.try :version %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

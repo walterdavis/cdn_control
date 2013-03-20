@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  version: 
+  file_uid: MyString
+  file_name: MyString
+
+two:
+  version: 
+  file_uid: MyString
+  file_name: MyString
