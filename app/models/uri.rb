@@ -1,6 +1,7 @@
 class Uri < ActiveRecord::Base
   belongs_to :version
-  attr_accessible :file_name, :file_uid, :file, :make_link
+  attr_accessor :replace
+  attr_accessible :file_name, :file_uid, :file, :make_link, :replace
   file_accessor :file do
     storage_path{|f| "#{file_storage_path}/#{f.name}"}
   end
@@ -8,6 +9,7 @@ class Uri < ActiveRecord::Base
     "#{version.library.name}/#{version.version}"
   end
   after_create :unpack
+  before_destroy :invalidate
   def unpack
     if self.file_name.downcase.match(/\.zip$/)
       #source = File.join("#{Rails.root}/public/system/dragonfly/#{Rails.env}",file_uid)
@@ -25,5 +27,14 @@ class Uri < ActiveRecord::Base
       end
       self.destroy
     end
+  end
+  def invalidate
+    conn = Fog::CDN.new(
+      :provider => 'AWS',
+      :aws_access_key_id => AWS_ACCESS_KEY,
+      :aws_secret_access_key => AWS_SECRET_KEY
+    )
+    conn.post_invalidation AWS_DISTRIBUTION_ID, '/' + self.file_uid
+    Rails.logger.info 'Trying to delete the file'
   end
 end

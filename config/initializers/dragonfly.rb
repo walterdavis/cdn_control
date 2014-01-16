@@ -10,3 +10,7 @@ end
 app.configure_with(:rails)
 
 app.define_macro(ActiveRecord::Base, :file_accessor)
+
+AWS_ACCESS_KEY = ENV['ACCESS_KEY_ID']
+AWS_SECRET_KEY = ENV['SECRET_ACCESS_KEY']
+AWS_DISTRIBUTION_ID = ENV['DISTRIBUTION_ID']
