@@ -19,10 +19,10 @@ class LibrariesController < ApplicationController
     end
   end
   def edit
-    @library = current_user.libraries.find(params[:id])
+    #@library = current_user.libraries.find(params[:id])
   end
   def update
-    @library = current_user.libraries.find(params[:id])
+    #@library = current_user.libraries.find(params[:id])
     if @library.update_attributes(params[:library])
       redirect_to @library, :notice  => "Updated library"
     else
