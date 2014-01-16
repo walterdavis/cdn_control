@@ -1,11 +1,16 @@
+<p class="form-inline text-left">
 <%- if f.object.file_name? -%>
-<p class="form-inline">
   <i class="icon-file" style="opacity: 0.4"></i>
   <%= f.object.file_name %> &nbsp;
-  <%= f.label :make_link, f.check_box(:make_link) + ' Make link', :class => 'checkbox' %>
-</p>
-<%- else -%>
-<%= f.file_field :file %>
-<span class="hint">(upload a Zip to create multiple files in one step)</span>
-<%= f.label :make_link, f.check_box(:make_link) + ' Make link', :class => 'checkbox' %>
 <%- end -%>
+<%= f.label :make_link, f.check_box(:make_link) + ' Make link', :class => 'checkbox', :style => 'margin-right: 8px' %>
+<a class="file-input-wrapper btn btn-small file">Browse
+<%= f.file_field :file, :class => 'file', :style => "left: -228px; top: 4px;", :onchange => 'decorate_file_button(this)' %>
+</a>
+<%- if f.object.file_name? -%>
+<%= f.link_to_remove '<span class="close btn-danger btn btn-small" style="float: none">&times;</span>'.html_safe %>
+<%- end -%>
+<!-- <span class="hint">(upload a Zip to create multiple files in one step)</span> -->
+<%# f.label :make_link, f.check_box(:make_link) + ' Make link', :class => 'checkbox' %>
+<%# end %>
+</p>
