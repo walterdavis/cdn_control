@@ -36,4 +36,4 @@ production:
   pool: 5
   username: root
   password: Ugk89VDDXMd58pE
-  socket: /tmp/mysql.sock
+  host: 127.0.0.1
