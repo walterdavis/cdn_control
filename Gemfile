@@ -4,9 +4,9 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.6'
   gem 'coffee-rails', '~> 3.2.2'
   gem 'uglifier', '~> 4.1.20'
+  gem 'sprockets-rails', '~> 0.0.1'
+  gem 'jquery-rails', '~> 3.1.5'
 end
-gem 'sprockets-rails', '~> 0.0.1'
-gem 'jquery-rails', '~> 3.1.5'
 gem 'byebug', '~> 11.0.1'
 gem "thin", '~> 1.5.1', :group => :development
 gem "mysql2", '~> 0.3.21'
