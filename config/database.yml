@@ -32,7 +32,7 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: cdn_admin_production
+  database: cdn_control_production
   pool: 5
   username: root
   password: Ugk89VDDXMd58pE
