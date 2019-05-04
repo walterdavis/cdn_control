@@ -10,6 +10,9 @@
 # http://github.com/RailsApps/rails-composer/issues
 #----------------------------------------------------------------------------
 
+# bundler state
+/vendor/bundle/
+/vendor/ruby/
 
 # minimal Rails specific artifacts
 db/*.sqlite3
