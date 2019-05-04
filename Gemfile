@@ -10,7 +10,7 @@ end
 gem 'byebug', '~> 11.0.1'
 gem "thin", '~> 1.5.1', :group => :development
 gem "mysql2", '~> 0.3.21'
-gem "bootstrap-sass", '~> 3.1.1.0'
+gem "bootstrap-sass", '~> 2.2.2.0'
 gem "devise", '~> 3.5.10'
 gem "devise_invitable", '~> 1.6.1'
 gem "cancan", '~> 1.6.10'
