@@ -1,4 +1,5 @@
 require 'dragonfly'
+require 'figaro'
 
 app = Dragonfly[:images]
 app.datastore = Dragonfly::DataStorage::S3DataStore.new
