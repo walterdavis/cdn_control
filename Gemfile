@@ -24,7 +24,5 @@ gem 'fog', '~> 1.41.0'
 gem "dragonfly", '~> 0.9.15'
 gem 'nested_form', '~> 0.3.2'
 gem 'rubyzip', '~> 0.9.9', :require => 'zip/zipfilesystem'
-gem 'therubyracer', '~> 0.12.3', :group => :production
-gem 'newrelic_rpm', '~> 6.3.0.355', :group => :production
 gem 'test-unit', '~> 3.3.2'
 gem 'drg', '~> 1.5.2'
