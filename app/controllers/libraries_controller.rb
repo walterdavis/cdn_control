@@ -11,7 +11,7 @@ class LibrariesController < ApplicationController
     @library = current_user.libraries.build
   end
   def create
-    Rails.logger.info ENV['ACCESS_KEY_ID']
+    Rails.logger.info ENV['SECRET_ACCESS_KEY']
     @library = current_user.libraries.build(params[:library])
     if(@library.save)
       redirect_to @library, :notice => 'Library created'
