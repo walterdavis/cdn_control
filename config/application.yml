@@ -8,6 +8,4 @@
 # Add application configuration variables here, as shown below.
 #
 ROLES: [admin, author, member]
-ACCESS_KEY_ID: 1B7VKD9F2CQCK4WG3Q02
-SECRET_ACCESS_KEY: jTGuYG1H3T681BfaNh/CGR1fBuChx601rTchne3U
 DISTRIBUTION_ID: E3O03RRR4MJSDP
